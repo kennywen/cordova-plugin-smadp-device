@@ -12,5 +12,12 @@
             </feature>
         </config-file>
         <source-file src="src/ios/SLDevice.m" />
+        
+        <header-file src="src/ios/FCUUID/FCUUID.h" />
+        <source-file src="src/ios/FCUUID/FCUUID.m" />
+        <header-file src="src/ios/FCUUID/UICKeyChainStore.h" />
+        <source-file src="src/ios/FCUUID/UICKeyChainStore.m" />
+        
+        <framework src="Security.framework" />
     </platform>
 </plugin>
