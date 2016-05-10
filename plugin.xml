@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-smadp-device" version="0.0.1">
+    <name>SLDevice</name>
+    <DESCRIPTION>Silverlake Mobility Ecosystem Device Plugin</DESCRIPTION>
+    <js-module name="SLDevice" src="www/SLDevice.js">
+        <clobbers target="SMADP.Device" />
+    </js-module>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="SLDevice">
+                <param name="ios-package" value="SLDevice" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/SLDevice.m" />
+    </platform>
+</plugin>

@@ -1,0 +1,22 @@
+{
+  "name": "SLDevice",
+  "version": "0.0.1",
+  "description": "Silverlake Mobility Ecosystem Device Plugin",
+  "cordova": {
+    "id": "cordova-plugin-smadp-device",
+    "platforms": []
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kennywen/cordova-plugin-smadp-device.git"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Kenny",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/kennywen/cordova-plugin-smadp-device/issues"
+  },
+  "homepage": "https://github.com/kennywen/cordova-plugin-smadp-device#readme"
+}
