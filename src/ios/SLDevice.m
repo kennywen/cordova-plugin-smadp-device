@@ -1,33 +1,37 @@
 /********* SLDevice.m Cordova Plugin Implementation *******/
 
 #import <Cordova/CDV.h>
+#import "FCUUID.h"
 
 @interface SLDevice : CDVPlugin {
   // Member variables go here.
 }
 
 - (void) isJailbroken:(CDVInvokedUrlCommand*)command;
+- (void) uuidForDevice:(CDVInvokedUrlCommand*)command;
 
 @end
 
 @implementation SLDevice
 
 - (void) isJailbroken:(CDVInvokedUrlCommand*)command{
-    CDVPluginResult *pluginResult;
-    
-    @try
-    {
-        bool jailbroken = [self jailbroken];
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:jailbroken];
-    }
-    @catch (NSException *exception)
-    {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:exception.reason];
-    }
-    @finally
-    {
-        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-    }
+    [self.commandDelegate runInBackground:^{
+        CDVPluginResult *pluginResult;
+        
+        @try
+        {
+            bool jailbroken = [self jailbroken];
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:jailbroken];
+        }
+        @catch (NSException *exception)
+        {
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:exception.reason];
+        }
+        @finally
+        {
+            [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+        }
+    }];
 }
 
 - (bool) jailbroken {
@@ -79,6 +83,14 @@
 #endif
     
     return NO;
+}
+
+- (void) uuidForDevice:(CDVInvokedUrlCommand*)command{
+    [self.commandDelegate runInBackground:^{
+        CDVPluginResult *pluginResult;
+        
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:[FCUUID uuidForDevice]];
+    }];
 }
 
 @end
