@@ -1,6 +1,6 @@
 {
   "name": "SLDevice",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Silverlake Mobility Ecosystem Device Plugin",
   "cordova": {
     "id": "cordova-plugin-smadp-device",
