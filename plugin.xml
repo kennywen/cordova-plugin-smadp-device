@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-smadp-device" version="0.0.1">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-smadp-device" version="0.0.3">
     <name>SLDevice</name>
     <DESCRIPTION>Silverlake Mobility Ecosystem Device Plugin</DESCRIPTION>
     <js-module name="SLDevice" src="www/SLDevice.js">
