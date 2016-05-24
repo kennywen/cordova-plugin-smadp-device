@@ -7,14 +7,14 @@
   // Member variables go here.
 }
 
-- (void) isJailbroken:(CDVInvokedUrlCommand*)command;
+- (void) isGenuine:(CDVInvokedUrlCommand*)command;
 - (void) uuidForDevice:(CDVInvokedUrlCommand*)command;
 
 @end
 
 @implementation SLDevice
 
-- (void) isJailbroken:(CDVInvokedUrlCommand*)command{
+- (void) isGenuine:(CDVInvokedUrlCommand*)command{
     [self.commandDelegate runInBackground:^{
         CDVPluginResult *pluginResult;
         
