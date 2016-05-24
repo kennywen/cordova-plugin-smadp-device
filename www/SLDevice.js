@@ -1,6 +1,6 @@
 var exec = require('cordova/exec');
 
-exports.isJailbroken = function(success, error) {
+exports.isGenuine = function(success, error) {
     exec(success, error, "SLDevice", "isGenuine", []);
 };
 
