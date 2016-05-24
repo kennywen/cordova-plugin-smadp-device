@@ -21,7 +21,7 @@
         @try
         {
             bool jailbroken = [self jailbroken];
-            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:jailbroken];
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:!jailbroken];
         }
         @catch (NSException *exception)
         {

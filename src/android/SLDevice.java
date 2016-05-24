@@ -37,7 +37,7 @@ public class SLDevice extends CordovaPlugin {
   }
 
   private void checkRoot(CallbackContext callbackContext) {
-    callbackContext.success(String.valueOf(SLRootCheck.isDeviceRooted()));
+    callbackContext.success(String.valueOf(!SLRootCheck.isDeviceRooted()));
   }
 
   private void getUUID(CallbackContext callbackContext) {
