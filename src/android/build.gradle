@@ -1,0 +1,11 @@
+repositories {
+    mavenCentral()
+    flatDir{
+      dirs 'libs'
+    }
+}
+
+dependencies {
+	compile 'com.android.support:appcompat-v7:23.2.0'
+	compile (name: 'ASDK_Common-2.0.1', ext: 'aar')
+}

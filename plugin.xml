@@ -20,4 +20,23 @@
         
         <framework src="Security.framework" />
     </platform>
+    
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="SLDevice" >
+                <param name="android-package" value="com.silverlake.plugin.SLDevice"/>
+            </feature>
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.READ_CONTACTS" />
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+        </config-file>
+        
+        <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+        
+        <source-file src="src/android/SLDevice.java" target-dir="src/com/silverlake/plugin" />
+        <resource-file src="src/android/libs/ASDK_Common-2.0.1.aar" target="libs/ASDK_Common-2.0.1.aar" />
+    </platform>
 </plugin>
